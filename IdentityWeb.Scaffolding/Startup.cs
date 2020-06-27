@@ -1,20 +1,14 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authentication;
-using Microsoft.AspNetCore.Authentication.AzureAD.UI;
+using Microsoft.Identity.Web;
+using Microsoft.Identity.Web.UI;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc.Authorization;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 
-
-namespace AzureAD.SingleTenant
+namespace IdentityWeb.Scaffolding
 {
     public class Startup
     {
@@ -28,8 +22,13 @@ namespace AzureAD.SingleTenant
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddAuthentication(AzureADDefaults.AuthenticationScheme)
-                .AddAzureAD(options => Configuration.Bind("AzureAd", options));
+            services.AddSignIn(Configuration, "AzureAd");
+            // Uncomment the following lines if you want your Web app to call a downstream API
+            // services.AddWebAppCallsProtectedWebApi(Configuration, 
+            //                                        new string[] { "user.read" }, 
+            //                                        "AzureAd")
+            //         .AddInMemoryTokenCaches();
+
 
             services.AddControllersWithViews(options =>
             {
@@ -38,7 +37,8 @@ namespace AzureAD.SingleTenant
                     .Build();
                 options.Filters.Add(new AuthorizeFilter(policy));
             });
-            services.AddRazorPages();
+           services.AddRazorPages()
+                   .AddMicrosoftIdentityUI();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
