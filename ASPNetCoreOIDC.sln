@@ -9,7 +9,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AzureAD.MultiTetant", "Azur
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityWeb.Scaffolding", "IdentityWeb.Scaffolding\IdentityWeb.Scaffolding.csproj", "{AFE16B38-D877-418E-8576-E30AF67E9F9D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IdentityWeb.ExistingWebApp", "IdentityWeb.ExistingWebApp\IdentityWeb.ExistingWebApp.csproj", "{49B7CB6D-85FC-4AC0-9472-3F6612BC30CB}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "IdentityWeb.ExistingWebApp", "IdentityWeb.ExistingWebApp\IdentityWeb.ExistingWebApp.csproj", "{49B7CB6D-85FC-4AC0-9472-3F6612BC30CB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "OIDC.Google", "OIDC.Google\OIDC.Google.csproj", "{0E1EC3E2-BE5C-45FD-BD8C-E8069B7F5612}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{49B7CB6D-85FC-4AC0-9472-3F6612BC30CB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{49B7CB6D-85FC-4AC0-9472-3F6612BC30CB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{49B7CB6D-85FC-4AC0-9472-3F6612BC30CB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E1EC3E2-BE5C-45FD-BD8C-E8069B7F5612}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E1EC3E2-BE5C-45FD-BD8C-E8069B7F5612}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E1EC3E2-BE5C-45FD-BD8C-E8069B7F5612}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E1EC3E2-BE5C-45FD-BD8C-E8069B7F5612}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
